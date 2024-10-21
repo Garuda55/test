@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+      integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+      crossorigin="anonymous"
+    />
+    <title>Загрузка файла</title>
+</head>
+<body>
+    <div
+              class="modal fade"
+              id="exampleModal"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                      Заголовок модального окна
+                    </h5>
+                    <button
+                      type="button"
+                      class="close"
+                      data-dismiss="modal"
+                      aria-label="Close"
+                    >
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <!------------------------- В тэге form указаны все необходимые атрибуты для отправки файлов ---------------------------->
+                    <form
+                      onsubmit="orderSend(this); return false;"
+                      enctype="multipart/form-data"
+                    >
+                      <div class="form-group row">
+                        <!-- <label for="inputEmail3" class="col-sm-2 col-form-label"
+                          >Эл. адрес</label
+                        > -->
+                        <div class="col-sm-12">
+                          <input
+                            type="text"
+                            placeholder="Ваше имя"
+                            class="form-control"
+                            id="inputEmail3"
+                            name="firstName"
+                          />
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="exampleFormControlSelect1"
+                          >Пример меню выбора</label
+                        >
+                        <select class="form-control" id="select" name="value">
+                          <option value="phone">Телефонный звонок</option>
+                          <option value="watsApp">WatsUpp</option>
+                          <option value="telegram">Telegram</option>
+                          <option value="email">Email</option>
+                        </select>
+                      </div>
+
+                      <div class="form-group">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="contactType"
+                          name="contact-me"
+                          aria-describedby="emailHelp"
+                          placeholder="Введите ваши контакты"
+                        />
+                      </div>
+
+                      <fieldset class="form-group row">
+                        <legend
+                          class="col-form-label col-sm-2 float-sm-left pt-0"
+                        >
+                          Радио
+                        </legend>
+                        <div class="col-sm-10">
+                          <div class="form-check">
+                            <input
+                              class="form-check-input"
+                              type="radio"
+                              name="gridRadios"
+                              id="gridRadios1"
+                              value="No-TZ"
+                              onclick="qaz()"
+                              checked
+                            />
+                            <label class="form-check-label" for="gridRadios1">
+                              Первое радио
+                            </label>
+                          </div>
+                          <div class="form-check" id="qq">
+                            <input
+                              class="form-check-input"
+                              type="radio"
+                              name="gridRadios"
+                              id="gridRadios2"
+                              value="TZ-Present"
+                              onclick="abc()"
+                            />
+
+                            <label class="form-check-label" for="gridRadios2">
+                              Второе радио
+                            </label>
+                          </div>
+
+                          <!---------------------------------- Блок подгрузки файла ---------------------------------------------------->
+                          <div class="form-group" id="ww">
+                            <label for="exampleFormControlFile1"
+                              >Пример ввода файла</label
+                            >
+                            <input
+                              type="file"
+                              class="form-control-file"
+                              id="exampleFormControlFile1"
+                              name="fileTz"
+                            />
+                          </div>
+                          <!---------------------------------- Блок подгрузки файла ---------------------------------------------------->
+
+                          <!-- <div class="form-check disabled">
+                            <input
+                              class="form-check-input"
+                              type="radio"
+                              name="gridRadios"
+                              id="gridRadios3"
+                              value="option3"
+                              disabled
+                            />
+                            <label class="form-check-label" for="gridRadios3">
+                              Третье отключенное радио
+                            </label>
+                          </div> -->
+                        </div>
+                      </fieldset>
+                      <div class="form-group row">
+                        <div class="col-sm-10 offset-sm-2">
+                          <div class="form-check">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              id="gridCheck1"
+                            />
+                            <label class="form-check-label" for="gridCheck1">
+                              Пример чекбокса
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              id="gridCheck2"
+                            />
+                            <label class="form-check-label" for="gridCheck1">
+                              Пример чекбокса
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              id="gridCheck3"
+                            />
+                            <label class="form-check-label" for="gridCheck1">
+                              Пример чекбокса
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- <div class="form-group row">
+                        <div class="col-sm-10">
+                          <button type="submit" class="btn btn-primary">
+                            Войти
+                          </button>
+                        </div>
+                      </div> -->
+                      <div class="form-group">
+                        <label for="exampleInputEmail1"
+                          >Дополнительный коментарий (если нужно)</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="exampleInputEmail1"
+                        />
+
+                        <small id="emailHelp" class="form-text text-muted"
+                          >Мы никогда никому не передадим Вашу электронную
+                          почту.</small
+                        >
+                      </div>
+                      <button type="submit" class="btn btn-primary">
+                        Сохранить изменения
+                      </button>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="submit" class="btn btn-secondary">
+                      Закрыть
+                    </button>
+                    <!-- <button type="submit" class="btn btn-primary">
+                      Сохранить изменения
+                    </button> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+  <script>
+      
+
+      // ---------------------------- Отправка формы на сервер ----------------------------------//
+      async function orderSend(form) {
+        let response = await fetch("php/handler.php", {
+          method: "POST",
+          body: new FormData(form),
+        });
+
+        let res = await response.text();
+
+        if (res == "ok") {
+          $("#exampleModal").modal("hide");
+        } else if (res == "no") {
+          alert("error");
+        }
+      }
+      // ---------------------------- Отправка формы на сервер ----------------------------------//
+    </script>
+</body>
+</html>
